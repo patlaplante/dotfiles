@@ -4,6 +4,7 @@ modification date: Monday, 4th November 2024, 13:30:25
 tags:
   - computer/shell/toolchain
   - computer/package_manager
+  - computer/cli
 ---
 
 

@@ -14,8 +14,13 @@ brew install readline
 ```
 
 ```shell
-
-
 asdf plugin-add python
 
+```
+
+## nushell
+To use venv
+```sh
+# source is not a valid command in nushell
+overlay use .venv/bin/activate.nu
 ```

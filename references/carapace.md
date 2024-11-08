@@ -2,8 +2,8 @@
 creation date: 2024-11-04 21:56
 modification date: Monday, 4th November 2024, 21:56:43
 tags:
-  - computer/cli/shell
   - computer/shell/completion
+  - computer/cli
 ---
 ![](Pasted%20image%2020241104220221.png)
 
