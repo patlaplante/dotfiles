@@ -2,7 +2,8 @@
 creation date: 2024-11-04 22:14
 modification date: Monday, 4th November 2024, 22:14:05
 tags:
-  - computer/shell/prompt
+  - shell/prompts
+---
 ---
 ```cardlink
 url: https://starship.rs
@@ -44,3 +45,18 @@ And add the following to the end of your Nushell configuration (find it by runni
 ```sh
 use ~/.cache/starship/init.nu
 ```
+
+## Using starship in VSCode terminal
+
+### starship fonts not showing correctly in integrated terminal
+
+```
+mkdir -p ~/.local/share/fonts
+ln -s ~/.local/share/fonts/
+~/.fonts 
+cd ~/.fonts 
+curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.tar.xz 
+tar -xvf Hack.tar.xz
+```
+
+Add to settings `"terminal.integrated.fontFamily": "Hack Nerd Font",`

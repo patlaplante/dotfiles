@@ -1,7 +1,7 @@
 ---
 creation date: 2024-11-04 13:30
 tags:
-  - computer/software
+  - software/knowledge-base
 ---
 
 ## to add property

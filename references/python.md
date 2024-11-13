@@ -2,7 +2,7 @@
 creation date: 2024-11-04 13:52
 modification date: Monday, 4th November 2024, 13:52:12
 tags:
-  - computer/coding/language
+  - dev/language/python
 ---
 
 Before installing python using asdf, install the following dependencies

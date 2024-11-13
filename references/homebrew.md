@@ -2,10 +2,14 @@
 creation date: 2024-11-04 13:30
 modification date: Monday, 4th November 2024, 13:30:25
 tags:
-  - computer/shell/toolchain
-  - computer/package_manager
-  - computer/cli
+  - shell/cli
+  - shell/package-manager
 ---
+```yaml
+os::macOs,Linux
+command::brew
+desc::The missing package manager for macOS (or Linux)
+```
 
 
 ```cardlink

@@ -9,13 +9,21 @@ Mac configuration/control swiss army knife
 [[zoxide]]
 Better CD navigation.  Remembers where you've bin, making it quicker to get back to where you've been in the past.
 
-```dataview
-LIST FROM "references"
-```
-
 ```dataviewjs
 // Render a simple table of book info sorted by rating.
 const table = dv.markdownTable(["cli", "os", "command", "desc"], dv.pages("#computer/cli")
+    .sort(b => b.file.link)
+    .map(b => [b.file.link, b.os, b.command, b.desc]))
+
+dv.paragraph(table);
+```
+
+
+## cli process monitor 
+
+```dataviewjs
+// Render a simple table of book info sorted by rating.
+const table = dv.markdownTable(["cli", "os", "command", "desc"], dv.pages("#computer/sys-mon")
     .sort(b => b.file.link)
     .map(b => [b.file.link, b.os, b.command, b.desc]))
 

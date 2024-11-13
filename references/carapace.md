@@ -2,9 +2,16 @@
 creation date: 2024-11-04 21:56
 modification date: Monday, 4th November 2024, 21:56:43
 tags:
-  - computer/shell/completion
-  - computer/cli
+  - shell/cli
+  - shell/completion
 ---
+```yaml
+os::macOs
+command::none
+desc::A multi-shell completion **[library](https://github.com/carapace-sh/carapace)** and **[binary](https://github.com/carapace-sh/carapace-bin)**
+```
+
+
 ![](Pasted%20image%2020241104220221.png)
 
 ```cardlink

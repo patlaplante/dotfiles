@@ -1,9 +1,9 @@
 ---
 creation date: 2024-11-04 13:30
 tags:
-  - computer/configuration
-  - computer/tools
-  - computer/cli
+  - shell/system-configuration
+  - shell/cli
+  - os/macos
 ---
 ```yaml
 os::macOs

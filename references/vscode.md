@@ -1,10 +1,26 @@
 ---
 creation date: 2024-11-04 13:30
 tags:
-  - computer/ide
-  - computer/software
+  - dev/ide
+  - software/ide
+  - os/macos
+  - os/linux
+  - os/windows
 ---
 
+---
+### references
+
+```cardlink
+url: https://www.youtube.com/watch?v=9_I0bySQoCs
+title: "Transforming VS Code: Beyond Themes! — Make VS Code Unrecognizable!"
+description: "In this video, we will explore how to customize VS Code beyond the usual options available through themes. We will significantly alter various aspects of the..."
+host: www.youtube.com
+favicon: https://www.youtube.com/s/desktop/97e0e051/img/logos/favicon_32x32.png
+image: https://i.ytimg.com/vi/9_I0bySQoCs/maxresdefault.jpg
+```
+
+---
 ## file nesting
 
 This enables hiding header files under source file.
@@ -26,30 +42,160 @@ This enables hiding header files under source file.
   },
 ```
 
+---
+## hide submodules in git 
 
-## issues
-### starship fonts not showing correctly in integrated terminal
+Add to `settings.json`
 
+```json
+{
+    "git.detectSubmodulesLimit": 0,
+    "git.detectSubmodules": false,
+}
 ```
-mkdir -p ~/.local/share/fonts
-ln -s ~/.local/share/fonts/
-~/.fonts 
-cd ~/.fonts 
-curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.tar.xz 
-tar -xvf Hack.tar.xz
-```
-
-Add to settings `"terminal.integrated.fontFamily": "Hack Nerd Font",`
 
 ---
-### references
+## extensions
+
+### Project navigation/selection
+#### Remote SSH
+```cardlink
+url: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh
+title: "Remote - SSH - Visual Studio Marketplace"
+description: "Extension for Visual Studio Code - Open any folder on a remote machine using SSH and take advantage of VS Code's full feature set."
+host: marketplace.visualstudio.com
+image: https://ms-vscode-remote.gallerycdn.vsassets.io/extensions/ms-vscode-remote/remote-ssh/0.116.2024110715/1730992722691/Microsoft.VisualStudio.Services.Icons.Default
+```
+
+#### Project dashboard
+```cardlink
+url: https://marketplace.visualstudio.com/items?itemName=kruemelkatze.vscode-dashboard
+title: "Project Dashboard - Visual Studio Marketplace"
+description: "Extension for Visual Studio Code - Organize your workspaces in a speed-dial manner."
+host: marketplace.visualstudio.com
+image: https://kruemelkatze.gallerycdn.vsassets.io/extensions/kruemelkatze/vscode-dashboard/2.6.0/1669153714791/Microsoft.VisualStudio.Services.Icons.Default
+```
+
+
+### Visual enhancement
+#### Peacock
+```cardlink
+url: https://www.peacockcode.dev
+title: "Peacock"
+description: "Coloring your world, one Code editor at a time"
+host: www.peacockcode.dev
+```
+
+#### Beatiful comment
+```cardlink
+url: https://marketplace.visualstudio.com/items?itemName=ParthR2031.colorful-comments
+title: "Colorful Comments - Visual Studio Marketplace"
+description: "Extension for Visual Studio Code - Improve and Enhance your code and make it attractive by adding Colorful Comments"
+host: marketplace.visualstudio.com
+image: https://parthr2031.gallerycdn.vsassets.io/extensions/parthr2031/colorful-comments/1.0.0/1658483004141/Microsoft.VisualStudio.Services.Icons.Default
+```
+
+
 
 ```cardlink
-url: https://www.youtube.com/watch?v=9_I0bySQoCs
-title: "Transforming VS Code: Beyond Themes! — Make VS Code Unrecognizable!"
-description: "In this video, we will explore how to customize VS Code beyond the usual options available through themes. We will significantly alter various aspects of the..."
-host: www.youtube.com
-favicon: https://www.youtube.com/s/desktop/97e0e051/img/logos/favicon_32x32.png
-image: https://i.ytimg.com/vi/9_I0bySQoCs/maxresdefault.jpg
+url: https://marketplace.visualstudio.com/items?itemName=file-icons.file-icons
+title: "file-icons - Visual Studio Marketplace"
+description: "Extension for Visual Studio Code - File-specific icons in VSCode for improved visual grepping."
+host: marketplace.visualstudio.com
+image: https://file-icons.gallerycdn.vsassets.io/extensions/file-icons/file-icons/1.1.0/1688483454970/Microsoft.VisualStudio.Services.Icons.Default
 ```
+
+
+
+
+### Live preview code execution
+#### ARepl for python
+```cardlink
+url: https://marketplace.visualstudio.com/items?itemName=almenon.arepl#overview
+title: "AREPL for python - Visual Studio Marketplace"
+description: "Extension for Visual Studio Code - real-time python scratchpad"
+host: marketplace.visualstudio.com
+image: https://almenon.gallerycdn.vsassets.io/extensions/almenon/arepl/2.0.5/1678079316979/Microsoft.VisualStudio.Services.Icons.Default
+```
+
+#### Typescript worksheet
+```cardlink
+url: https://marketplace.visualstudio.com/items?itemName=chwoerz.ts-worksheet
+title: "TypeScript Worksheet - Visual Studio Marketplace"
+description: "Extension for Visual Studio Code - Live preview of your code right inside your editor"
+host: marketplace.visualstudio.com
+image: https://chwoerz.gallerycdn.vsassets.io/extensions/chwoerz/ts-worksheet/0.8.27/1729027053994/Microsoft.VisualStudio.Services.Icons.Default
+```
+
+
+### Language specifics
+### Json crack
+```cardlink
+url: https://marketplace.visualstudio.com/items?itemName=AykutSarac.jsoncrack-vscode
+title: "JSON Crack - Visual Studio Marketplace"
+description: "Extension for Visual Studio Code - Seamlessly visualize your JSON data instantly into graphs."
+host: marketplace.visualstudio.com
+image: https://aykutsarac.gallerycdn.vsassets.io/extensions/aykutsarac/jsoncrack-vscode/2.0.3/1711383474427/Microsoft.VisualStudio.Services.Icons.Default
+```
+
+
+
+```cardlink
+url: https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen
+title: "Doxygen Documentation Generator - Visual Studio Marketplace"
+description: "Extension for Visual Studio Code - Let me generate Doxygen documentation from your source code for you."
+host: marketplace.visualstudio.com
+image: https://cschlosser.gallerycdn.vsassets.io/extensions/cschlosser/doxdocgen/1.4.0/1645786891772/Microsoft.VisualStudio.Services.Icons.Default
+```
+
+
+
+```cardlink
+url: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+title: "EditorConfig for VS Code - Visual Studio Marketplace"
+description: "Extension for Visual Studio Code - EditorConfig Support for Visual Studio Code"
+host: marketplace.visualstudio.com
+image: https://editorconfig.gallerycdn.vsassets.io/extensions/editorconfig/editorconfig/0.16.4/1607315835386/Microsoft.VisualStudio.Services.Icons.Default
+```
+
+
+
+```cardlink
+url: https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens
+title: "Error Lens - Visual Studio Marketplace"
+description: "Extension for Visual Studio Code - Improve highlighting of errors, warnings and other language diagnostics."
+host: marketplace.visualstudio.com
+image: https://usernamehw.gallerycdn.vsassets.io/extensions/usernamehw/errorlens/3.20.0/1719044874383/Microsoft.VisualStudio.Services.Icons.Default
+```
+
+
+
+```cardlink
+url: https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
+title: "GitLens — Git supercharged - Visual Studio Marketplace"
+description: "Extension for Visual Studio Code - Supercharge Git within VS Code — Visualize code authorship at a glance via Git blame annotations and CodeLens, seamlessly navigate and explore Git repositories, gain valuable insights via rich visualizations and powerful comparison commands, and so much more"
+host: marketplace.visualstudio.com
+image: https://eamodio.gallerycdn.vsassets.io/extensions/eamodio/gitlens/2024.11.904/1731143307732/Microsoft.VisualStudio.Services.Icons.Default
+```
+
+
+
+```cardlink
+url: https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid
+title: "Markdown Preview Mermaid Support - Visual Studio Marketplace"
+description: "Extension for Visual Studio Code - Adds Mermaid diagram and flowchart support to VS Code's builtin markdown preview"
+host: marketplace.visualstudio.com
+image: https://bierner.gallerycdn.vsassets.io/extensions/bierner/markdown-mermaid/1.26.0/1729712560714/Microsoft.VisualStudio.Services.Icons.Default
+```
+
+
+
+```cardlink
+url: https://marketplace.visualstudio.com/items?itemName=pnp.polacode
+title: "Polacode - Visual Studio Marketplace"
+description: "Extension for Visual Studio Code - 📸  Polaroid for your code"
+host: marketplace.visualstudio.com
+image: https://pnp.gallerycdn.vsassets.io/extensions/pnp/polacode/0.3.4/1569601471865/Microsoft.VisualStudio.Services.Icons.Default
+```
+
 
