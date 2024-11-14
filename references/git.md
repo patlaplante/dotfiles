@@ -3,6 +3,11 @@ creation date: 2024-11-04 13:30
 tags:
   - dev/tools
   - shell/cli
+  - os/linux
+  - os/macos
+  - os/windows
+command: git
+description: source control
 ---
 ```yaml
 os::macOs
@@ -37,8 +42,17 @@ git worktree remove ./fix-critical-bug
 
 Imagine the following scenario: Your code is not working properly, but you can’t figure out what’s wrong. You just know that a week ago, everything ran fine.
 
-Git bisect can help you pinpoint the exact commit a bug was introduced. You run _git bisect start_, mark the good and bad commits (with _git bisect good / git bisect bad <hash>). Git will automatically switch to the commit in the middle. You can mark it as good or bad and then git will switch again to commit in the middle between the good and bad commit, repeating this process until the guilty commit was found.
+Git bisect can help you pinpoint the exact commit a bug was introduced. You run _git bisect start_, mark the good and bad commits (with `git bisect good / git bisect bad <hash>`). Git will automatically switch to the commit in the middle. You can mark it as good or bad and then git will switch again to commit in the middle between the good and bad commit, repeating this process until the guilty commit was found.
 
 ![](Pasted%20image%2020241110225852.png)
 
 Starting with a bad (step 1) and good (step 2) commit, _git bisect_ will jump to the commits in between (steps 3 and 4) to narrow down the commit where an error was introduced (step 5).
+
+## Renaming local and remote branches
+
+```
+❯ git branch -m {old_branch_name} {new_branch_name}
+❯ git push origin :{old_remote_branch_name} {new_remote_branch_name}
+❯ git push --set-upstream origin {new_remote_branch_name}
+Everything up-to-date
+```

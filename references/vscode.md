@@ -55,6 +55,29 @@ Add to `settings.json`
 ```
 
 ---
+## references
+
+```cardlink
+url: https://itnext.io/vs-code-shortcuts-to-code-like-youre-playing-a-piano-part-2-c27202ea7ea1
+title: "VS Code Shortcuts to Code Like You’re Playing A Piano — Part 2"
+description: "Significantly increase your focus and speed with these advanced vs code shortcuts"
+host: itnext.io
+favicon: https://miro.medium.com/v2/resize:fill:256:256/1*SiXeRxgOt0pAYlYhwZIu3g.png
+image: https://miro.medium.com/v2/resize:fit:1200/0*EdYpKHW70AhoDKim.jpeg
+```
+
+
+```cardlink
+url: https://code.visualstudio.com/docs/getstarted/userinterface
+title: "Visual Studio Code User Interface"
+description: "A quick overview of the Visual Studio Code user interface. Learn about the editor, window management, and special UI to handle source control, extension management, full text search and more."
+host: code.visualstudio.com
+image: https://code.visualstudio.com/opengraphimg/opengraph-docs.png
+```
+
+
+
+---
 ## extensions
 
 ### Project navigation/selection

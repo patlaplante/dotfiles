@@ -4,6 +4,7 @@ modification date: Tuesday, 5th November 2024, 09:49:31
 tags:
   - shell/system-configuration
   - os/macos
+  - to-investigate-more
 ---
 
 ## dock
