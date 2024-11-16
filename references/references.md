@@ -30,6 +30,17 @@ const table = dv.markdownTable(["cli", "os", "command", "desc"], dv.pages("#comp
 dv.paragraph(table);
 ```
 
+```dataviewjs
+// Render a simple table of book info sorted by rating.
+const table = dv.markdownTable(["cli", "os", "command", "desc"], dv.pages("#shell/system-monitor")
+    .sort(b => b.file.link)
+    .map(b => [b.file.link, b.os, b.command, b.description]))
+
+dv.paragraph(table);
+```
+
+
+```dataviewjs const tCount = dv.pages("") .file.tasks.filter(task => dv.func.contains(task.tags, "⛑️") && !task.completed) .length; ```
 ## ide
 [[vscode]]
 
