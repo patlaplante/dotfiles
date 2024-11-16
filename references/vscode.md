@@ -222,3 +222,16 @@ image: https://pnp.gallerycdn.vsassets.io/extensions/pnp/polacode/0.3.4/15696014
 ```
 
 
+
+---
+## other extensions
+
+```cardlink
+url: https://blog.devgenius.io/best-vscode-extensions-im-in-love-with-%EF%B8%8F-e50981fa0767
+title: "Best VSCode Extensions I’m in Love With! ❤️"
+description: "Discover the best VSCode extensions that enhance your coding experience! From Console Ninja to VSCode Pets, check out my favorites that…"
+host: blog.devgenius.io
+favicon: https://miro.medium.com/v2/resize:fill:256:256/1*CvejhRq3NYsivxILYXEdfA.jpeg
+image: https://miro.medium.com/v2/resize:fit:1200/1*xGN-hqNNL_V_P2gB6MrPhA.jpeg
+```
+
