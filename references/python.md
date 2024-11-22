@@ -8,9 +8,18 @@ tags:
 Before installing python using asdf, install the following dependencies
 
 ```shell
+# os/macos
 brew install ncurses
 brew install readline
 
+# os/linux 
+sudo apt install libncurses-dev libreadline-dev libssl-dev libbz2-dev libsqlite3-dev lzma python3-tk
+
+sudo apt-get install libffi-dev
+sudo apt-get install lzma
+sudo apt-get install liblzma-dev
+sudo apt-get install libbz2-dev
+sudo apt install tk-dev
 ```
 
 ```shell
