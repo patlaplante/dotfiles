@@ -29,3 +29,24 @@ favicon: https://miro.medium.com/v2/5d8de952517e8160e40ef9841c781cdc14a5db313057
 image: https://miro.medium.com/v2/resize:fit:832/1*cJpjIIbFB0XQfT6atIzLQA.jpeg
 ```
 
+
+
+```cardlink
+url: https://www.skeleton.dev/elements/lists
+title: "Skeleton — UI Toolkit for Svelte + Tailwind"
+description: "Skeleton is a fully featured UI Toolkit for building reactive interfaces quickly using Svelte and Tailwind."
+host: www.skeleton.dev
+favicon: ../favicon.png
+image: https://user-images.githubusercontent.com/1509726/212382766-f29b9c9a-82e3-44c2-b911-b17a9197e5b9.jpg
+```
+
+
+```cardlink
+url: https://simpleicons.org
+title: "Simple Icons"
+description: "3227 Free SVG icons for popular brands"
+host: simpleicons.org
+favicon: https://simpleicons.org/images/favicon.ico
+image: https://simpleicons.org/images/og.png
+```
+
