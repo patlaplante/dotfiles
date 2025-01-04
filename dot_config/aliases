@@ -1,0 +1,181 @@
+#!usr/bin/env zsh
+
+# Path manipulation
+alias path='echo -e ${PATH//:/\\n}' # List all paths in a lists
+
+# File/Directory listing aliases
+alias filetree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'" # List file in a tree
+alias ls='eza ${LS_OPTIONS} --group-directories-first -h -F --icons --git' # List all files
+alias ll='ls -l' # List all files with details
+alias lss='ls -l --sort=size' # List all files sorted by size
+alias lh='eza -ld .?*' # List all hidden files
+alias lla='eza -la' # List all files with details including hidden files
+alias llsa='eza -la --sort=size' # List all files with details including hidden files sorted by size
+alias l='ls -l' # List all files with details
+alias lt='ls --tree'
+
+# File/Directory navigations
+alias j=cdr # Jump around directories
+alias mmv='noglob zmv -W' # Mass renaming (mmv *.foo *.bar)
+alias -g ...='../..' # Go up two level
+alias -g ....='../../..' # Go up three level
+alias -g .....='../../../..' # Go up four level
+
+# File operations
+alias cat='bat -A'  # Better cat
+alias catp='bat -p'  # Bat without fancy stuff
+alias file_size_kb='du -k "$filename" | cut -f1' # Size of file in kb
+
+# Terminal commands
+alias c="clear" # Clear the terminal
+alias e="exit" # Exit the terminal
+alias dumpcolor='for i in {0..255}; do print -Pn "%K{$i} %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done' # Print colors escape code.
+
+# Networking
+alias listopenport='sudo lsof -i -P | grep -i "listen"' # List all open ports.
+alias myip="curl http://ipecho.net/plain; echo" # List my ip
+
+
+# Related to this shell scripting
+alias reload='source $HOME/.zshrc' # Reload the zshrc env, useful after changing dotfiles
+alias h='help | cat'
+alias ha='help-alias | cat'
+alias hf='help-functions | cat'
+
+# Brew
+alias bsstart='brew services start' # Start service
+alias bsstop='brew services stop'   # Stop service
+alias bslist='brew services list'   # List services
+alias bsrestart='brew services restart' # Restart services
+
+# Git
+alias gpa="alias | grep '^g'" # Dump list of git aliases
+alias update-fork='git fetch upstream && git checkout master && git merge upstream/master && git push origin master' # To update a fork
+alias gitzip="git archive HEAD -o " # Create a zip archive
+alias glg1="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)â€” %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative" # Pretty log
+alias glg2="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)â€” %cn%C(reset)' --abbrev-commit" # Pretty log
+alias gundocommit="git reset HEAD~1" # Undo a local commit
+alias goldiff="git diff --name-status" # Diff one line
+alias gs="git status -s" # Git status
+alias gci="git commit" # Git commit
+alias gbr="git branch" # Git branch
+alias gco="git checkout" # Git checkout
+alias gdf="git diff" # Git diff
+alias gdc="git diff --cached" # Git diff cached
+alias glg="git log -p" # Git log
+alias glol="git log --graph --decorate --pretty=oneline --abbrev-commit" # Pretty graph online
+alias glola="git log --graph --decorate --pretty=oneline --abbrev-commit --all" # Pretty graph online
+alias glsf="git ls-files" # List ls-files syste
+alias glogsinglefile="git log --follow" # Git show log for one file
+alias ghist="git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short" # Print history
+alias gtype="git cat-file -t" # Not sure
+alias gdump="git cat-file -p" # Not sure
+alias gec="git config --global -e" # Open global git config file
+alias gca="git commit --amend --no-edit" # Ammend commit with no edit
+
+# Node js
+alias npm-pop='npm outdated -g --depth=0'  # Update outdated package only top one
+alias npm-pupd='npm update -g' # Update all outdated packages including child packages
+alias npm-lg="npm list -g --depth=0 2>/dev/null" # List globally installe packages
+alias npm-ll="npm list --depth=0 2>/dev/null" # List locally installed packages
+
+# TMUX
+alias tmnew='tmux -CC new -s' # New tmmux session
+alias tl='tmux ls' # List tmux sessions
+alias ta='tmux attach -t' # Join tmux session
+
+# VS Code
+alias vscode_list_ext='code --list-extensions' # List extensions
+alias vscode_install_ext='code --install-extension ' # Install extension
+alias vscode_uninstall_ext='code --uninstall-extension ' # Uninstall extension
+
+# Uncategorized
+alias macinfo='neofetch' # Display system info.
+alias diskinfo='diskutil list' # List all disk attached to this computer.
+alias rm='trash-put' # Node app that sends file to trash can.
+alias -g CA="2>&1 | cat -A"
+alias -g C='| wc -l'
+alias -g D="DISPLAY=:0.0"
+alias -g DN=/dev/null
+alias -g ED="export DISPLAY=:0.0"
+alias -g EG='|& egrep'
+alias -g EH='|& head'
+alias -g EL='|& less'
+alias -g ELS='|& less -S'
+alias -g ETL='|& tail -20'
+alias -g ET='|& tail'
+alias -g F=' | fmt -'
+alias -g G='| egrep'
+alias -g H='| head'
+alias -g HL='|& head -20'
+alias -g Sk="*~(*.bz2|*.gz|*.tgz|*.zip|*.z)"
+alias -g LeL="2>&1 | less"
+alias -g Le="| less"
+alias -g LeS='| less -S'
+alias -g MM='| most'
+alias -g M='| more'
+alias -g NE="2> /dev/null"
+alias -g NS='| sort -n'
+alias -g NUL="> /dev/null 2>&1"
+alias -g PIPE='|'
+alias -g R=' > /c/aaa/tee.txt '
+alias -g RNS='| sort -nr'
+alias -g S='| sort'
+alias -g TL='| tail -20'
+alias -g T='| tail'
+alias -g US='| sort -u'
+alias -g VM=/var/log/messages
+alias -g X0G='| xargs -0 egrep'
+alias -g X0='| xargs -0'
+alias -g XG='| xargs egrep'
+alias -g X='| xargs'
+alias f2='idf.py -p /dev/cu.usbserial-2140 flash' # flash
+alias f1='idf.py -p /dev/cu.usbserial-2110 flash' # flash
+alias m1='idf.py -p /dev/cu.usbserial-2110 monitor' # monitor
+alias m2='idf.py -p /dev/cu.usbserial-2140 monitor' # monitor
+
+## One liner
+alias chuck='curl -sL https://api.chucknorris.io/jokes/random | jq -r .value' # Chuck norris joke
+
+## ALIASES
+alias grep='grep --color'                           # colorize output
+alias off='sudo shutdown -h now'                    # power off now
+alias reboot='sudo shutdown -r now'                 # reboot now
+alias findps='ps -ax | grep'                        # find processes matching input to grep
+alias dl='diskutil list'                            # macOS only; list all block devices
+alias mnt='diskutil mount'                          # macOS only; mount drive
+alias unmnt='diskutil unmount'                      # macOS only; unmount drive
+alias eject='diskutil eject'                        # macOS only; mount eject
+alias gita='git add'                                # add file(s) for commit
+alias gitc='git commit -m'                          # stage files with a message
+alias gitp='git push'                               # push
+alias tmuxn='tmux new-session -s'                   # start a new tmux session and name it
+alias tmuxa='tmux attach -t'                        # attach to a named tmux session
+alias tree='tree -Ch'                               # add color and human-readable file sizes
+alias tx="tmuxinator"                               # alias for tmuxinator   
+
+## ESP ALIAS
+alias esp531='source ~/.tools/espidf/esp-idf-v5.3.1/export.sh'
+alias helpers='source bin/helpers.sh'
+
+## PROJECT ALIAS
+alias coc='cd ~/Projects/covenofchaos'              # coven of chaos projects
+alias gen='cd ~/Projects/covenofchaos/genealogy'    # genealogy projects
+alias hcl='cd ~/Projects/appliedlogix/hcl'          # hcl projects
+alias wip='cd /Volumes/wip'                         # wip scratchpad
+alias learning='cd ~/Projects/covenofchaos/learning' # learning projects
+alias i2s='cd ~/Projects/appliedlogix/i2system'     # i2s projectsalias al='cd ~/Projects/appliedlogix' # applied logix projects folder
+alias al='cd ~/Projects/appliedlogix' # applied logix projects folder
+alias mn8='cd ~/Projects/appliedlogix/mn8' # mn8 project
+alias down='cd ~/Downloads' # Goto downloads
+alias sand='cd ~/Projects/covenofchaos/sandbox'
+alias nortis='cd ~/Projects/appliedlogix/fikst/repos/nortis_perfusion_source' # 
+
+## PIS ALIASES
+alias sulaco='ssh sulaco'
+alias deckard='ssh deckard'
+alias ripley='ssh ripley'
+alias zhora='ssh zhora'
+alias hicks='ssh hicks'
+alias ryvid='cd `pwd`' # 
+

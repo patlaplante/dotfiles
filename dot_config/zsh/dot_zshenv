@@ -1,0 +1,21 @@
+unalias -a
+export MOSH_ESCAPE_KEY="~"
+#(( $+_PROFILE_SOURCED )) || source "$HOME/.profile"
+typeset -TU GITREPOPATH gitrepopath
+typeset -TU PATH path=(${path:A})
+# prompt expansion, script filename, P: realpath, h: dirname
+ZDOTDIR="${${(%):-%x}:P:h}"
+TMPPREFIX=${XDG_RUNTIME_DIR:-/tmp}/zsh
+# write problems in zdotdir
+export NOTES_DIRECTORY="$HOME/Documents/current/notes"
+
+if (( $+commands[nvim] )); then
+	export {EDITOR,VISUAL}=nvim
+elif (( $+commands[vim] )); then
+	export {VISUAL,EDITOR}=vim
+fi
+
+
+. "$HOME/.local/share/../bin/env"
+
+. "$HOME/.atuin/bin/env"

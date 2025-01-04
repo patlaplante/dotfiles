@@ -1,0 +1,124 @@
+##
+# ⚠️ WARNING: Don't manually `source` your .zshrc file! This can have unexpected
+# side effects.
+# Instead, to apply changes, open a new terminal or restart your shell.
+#
+
+export XDG_CONFIG_HOME=/Users/pat/.config
+
+[[ -r ~/.local/zshenv/znap/znap.zsh ]] ||
+    git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/.local/zshenv/znap
+
+##
+# Source Znap at the start of your .zshrc file.
+#
+source ~/.local/zshenv/znap/znap.zsh
+
+LC_CTYPE=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+eval "$(~/.local/bin/mise activate zsh)"
+
+
+znap source sorin-ionescu/prezto modules/{environment,history}
+znap source ohmyzsh/ohmyzsh plugins/asdf
+
+
+# `znap prompt` makes your prompt visible in just 15-40ms!
+#znap prompt sindresorhus/pure
+# The same goes for any other kind of custom prompt:
+#znap eval starship 'starship init zsh --print-full-init'
+#znap prompt 
+eval "$(starship init zsh)"
+
+#znap prompt ohmyzsh/ohmyzsh themes/clean
+#znap prompt agnoster/agnoster-zsh-theme
+
+
+##
+# Cache the output of slow commands with `znap eval`.
+#
+
+# `znap source` starts plugins.
+znap source marlonrichert/zsh-autocomplete
+
+bindkey              '^I'         menu-complete
+bindkey "$terminfo[kcbt]" reverse-menu-complete
+
+# `znap eval` makes evaluating generated command output up to 10 times faster.
+znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
+
+# `znap function` lets you lazy-load features you don't always need.
+znap function _pyenv pyenv "znap eval pyenv 'pyenv init - --no-rehash'"
+compctl -K    _pyenv pyenv
+
+# `znap install` adds new commands and completions.
+znap install aureliojargas/clitest zsh-users/zsh-completions
+
+# TO enable color in man output using bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+#fortune | cowsay | lolcat
+autoload -Uz compinit && compinit
+
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
+
+export _ZO_DATA_DIR="`pwd`/.local/share/zoxide"
+eval "$(zoxide init --cmd cd zsh)"
+source <(fzf --zsh)
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git "
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+export FZF_DEFAULT_OPTS="--height 50% --layout=default --border --color=hl:#2dd4bf"
+
+# Setup fzf previews
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always -n --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | head -200'"
+
+# fzf preview for tmux
+export FZF_TMUX_OPTS=" -p90%,70% "
+
+#region atouin - fuzzy search history
+
+eval "$(atuin init zsh --disable-up-arrow)"
+
+bindkey '^r' _atuin_search_widget
+
+# depends on terminal mode
+bindkey '^[[A' _atuin_search_widget
+bindkey '^[OA' _atuin_search_widget
+
+
+#endregion
+
+function pet-select() {
+  BUFFER=$(pet search --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+zle -N pet-select
+stty -ixon
+bindkey '^s' pet-select
+
+function prev() {
+  PREV=$(fc -lrn | head -n 1)
+  sh -c "pet new `printf %q "$PREV"`"
+}
+
+source $XDG_CONFIG_HOME/aliases
+
+alias zrcedit="vi $XDG_CONFIG_HOME/zsh/.zshrc"
+alias zrcreload="source $XDG_CONFIG_HOME/zsh/.zshrc"
+
+alias esp531="source /Users/pat/.tools/espidf/esp-idf-v531/export.sh"
+alias helpers="source bin/helpers.sh"
+
+export GOBIN=~/.go
+source "$HOME/.local/bin/env"
