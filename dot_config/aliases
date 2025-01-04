@@ -161,21 +161,7 @@ alias helpers='source bin/helpers.sh'
 ## PROJECT ALIAS
 alias coc='cd ~/Projects/covenofchaos'              # coven of chaos projects
 alias gen='cd ~/Projects/covenofchaos/genealogy'    # genealogy projects
-alias hcl='cd ~/Projects/appliedlogix/hcl'          # hcl projects
 alias wip='cd /Volumes/wip'                         # wip scratchpad
 alias learning='cd ~/Projects/covenofchaos/learning' # learning projects
-alias i2s='cd ~/Projects/appliedlogix/i2system'     # i2s projectsalias al='cd ~/Projects/appliedlogix' # applied logix projects folder
-alias al='cd ~/Projects/appliedlogix' # applied logix projects folder
-alias mn8='cd ~/Projects/appliedlogix/mn8' # mn8 project
 alias down='cd ~/Downloads' # Goto downloads
 alias sand='cd ~/Projects/covenofchaos/sandbox'
-alias nortis='cd ~/Projects/appliedlogix/fikst/repos/nortis_perfusion_source' # 
-
-## PIS ALIASES
-alias sulaco='ssh sulaco'
-alias deckard='ssh deckard'
-alias ripley='ssh ripley'
-alias zhora='ssh zhora'
-alias hicks='ssh hicks'
-alias ryvid='cd `pwd`' # 
-
