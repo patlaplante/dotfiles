@@ -1,0 +1,30 @@
+#autoload
+
+# description: Add an existing file to my dotfiles repo.
+# usage: alias-add name 'somecommand' 'some comments for the help'
+# result: Will add: name='somecommand' # some comments for the help
+
+f="$1"
+if [[ -L "$f" ]]; then
+    # File is a link, get the root of it.
+    l=$(readlink "$f")
+
+    filename=$(basename -- "$l")
+    extension="${filename##*.}"
+    filename="${filename%.*}"
+
+    cp $l ~/.dotfiles/dotfiles/"$filename".symlink
+
+    rm "$f"
+    ln -s ~/.dotfiles/dotfiles/"$filename".symlink ".$filename"
+elif [[ -f "$f" ]]; then
+    suffix=".symlink"
+    filename=${f/%$suffix}
+
+    [[ $filename = .* ]] && filename=${filename:1}
+
+    cp $f ~/.dotfiles/dotfiles/"$filename".symlink
+
+    rm "$f"
+    ln -s ~/.dotfiles/dotfiles/"$filename".symlink ".$filename"
+fi

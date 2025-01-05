@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+# description: Add a new alias at the end of the aliases file.
+# usage: alias-add name 'somecommand' 'some comments for the help'
+# result: Will add: name='somecommand' # some comments for the help
+
+al="$1"
+cmd="$2"
+comments=$3
+
+echo "alias $al='$cmd' # $comments" >> "$aliases_location"
+source "$aliases_location"

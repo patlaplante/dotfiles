@@ -1,0 +1,16 @@
+#autoload
+
+# description: Remove a folder from the path.
+# usage: alias-add name 'somecommand' 'some comments for the help'
+# result: Will add: name='somecommand' # some comments for the help
+
+for p in "$@"
+    do
+      p=${p%"${p##*[!/]}"} ## remove trailing slashes
+      case $PATH in
+          "$p":*) PATH=${PATH#$p:} ;; ## at beginning of PATH
+          *:"$p") PATH=${PATH%:$p} ;; ## at end of PATH
+          *:"$p":*) PATH=${PATH%":$p"*}${PATH##*"$p"} ;;
+      esac
+    done
+    export PATH

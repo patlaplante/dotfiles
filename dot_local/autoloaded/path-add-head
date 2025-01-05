@@ -1,0 +1,16 @@
+#autoload
+
+# description: Append an entry to the beginning of the path.
+# usage: alias-add name 'somecommand' 'some comments for the help'
+# result: Will add: name='somecommand' # some comments for the help
+
+for p in "$@"; do
+        path-exists $p
+        if [ $? -eq 0 ]; then
+                PATH=$p:$PATH
+        elif; then
+            echo "$p is already in path"
+        fi
+done
+
+export PATH

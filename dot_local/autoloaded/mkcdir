@@ -1,0 +1,4 @@
+# description: Make and cd into a directory in 1 commmand
+
+mkdir -p -- "$1" &&
+cd -P -- "$1"

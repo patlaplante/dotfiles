@@ -1,0 +1,43 @@
+# description: Print help for my aliases.
+# usage: alias-add name 'somecommand' 'some comments for the help'
+# result: Will add: name='somecommand' # some comments for the help
+
+autoload colors; colors
+
+black=$(tput setaf 0)
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+yellow=$(tput setaf 3)
+lime_yellow=$(tput setaf 190)
+powder_blue=$(tput setaf 153)
+blue=$(tput setaf 4)
+magenta=$(tput setaf 5)
+cyan=$(tput setaf 6)
+white=$(tput setaf 7)
+bright=$(tput bold)
+normal=$(tput sgr0)
+blink=$(tput blink)
+reverse=$(tput smso)
+underline=$(tput smul)
+
+echo ${lime_yellow}Aliases${normal}
+while IFS= read -r line
+do
+    [[ $line = \#\!* ]] && continue
+
+    ## take some action on $line
+    if [[ $line = \#* ]]; then
+        # Section header
+        line=${line:2}
+        printf "\n%s: %s\n" "${bold}${red}$line${normal}"
+    fi
+
+    if [[ $line = alias* ]]; then
+        #name=$(echo $line | echo $line | gsed -e 's/alias \(.*\)=.*/\1/')
+        name=$(echo $line | gsed -e "s/^alias \([^=]*\)=.*/\1/")
+        comments=$(echo $line | gsed -e 's/alias .*=.*# \(.*\)/\1/')
+
+        # printf "%25s: %s\n" "${(%):-%F{green}$name${(%):-%f}" "$comments"
+        printf "%28s: %s\n" "${bold}${blue}$name${normal}" "${green}$comments${normal}"
+    fi
+done <<< $(catp "$aliases_location")

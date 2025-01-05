@@ -1,0 +1,7 @@
+#local out colored
+# description: Cat source code with syntax highlighting
+
+out=$(/bin/cat $@)
+colored=$(echo $out | pygmentize -O "style=zenburn")
+echo "$colored" | bat
+#[[ -n $colored ]] && echo "$colored"  | bat || echo "$out"

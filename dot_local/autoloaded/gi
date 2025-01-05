@@ -1,0 +1,7 @@
+#autoload
+
+# description: Fetch .gitignore data for specific keyword.
+# usage: alias-add name 'somecommand' 'some comments for the help'
+# result: Will add: name='somecommand' # some comments for the help
+
+curl -L -s https://www.gitignore.io/api/$@

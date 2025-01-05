@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+# description: When you’re not sure which convention is used, main or master.
+#set -eu
+
+# print name of main branch, e.g. "main" :) or "master" :(
+git remote show origin|grep HEAD|sed 's/.* //'

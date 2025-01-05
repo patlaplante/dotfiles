@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+# description: If you want to quickly work on something.
+
+# create a new tmp branch
+git checkout $(git main)
+git branch -D tmp || true
+git checkout -b tmp

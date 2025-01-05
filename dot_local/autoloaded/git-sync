@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+# description: For when you want to get into sync with main.
+
+# sync current branch with main
+main=$(git-main)
+git checkout $main
+git pull
+git checkout -
+git pull
+git merge --no-edit $main

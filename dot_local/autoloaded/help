@@ -1,0 +1,8 @@
+# description: Print all help for my functions/aliases.
+# usage: alias-add name 'somecommand' 'some comments for the help'
+# result: Will add: name='somecommand' # some comments for the help
+
+if [[ $# -eq 0 ]]; then
+    help-alias
+    help-functions
+fi

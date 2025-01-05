@@ -1,0 +1,11 @@
+#autoload
+
+# description: Check if the specified folder is in the path.
+# usage: alias-add name 'somecommand' 'some comments for the help'
+# result: Will add: name='somecommand' # some comments for the help
+
+case ":$PATH:" in
+        *":$1:"*) return 1
+                ;;
+esac
+return 0;
