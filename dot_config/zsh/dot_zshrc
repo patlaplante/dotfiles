@@ -158,3 +158,5 @@ function _upto()
 compdef _upto upto
 
 eval $(thefuck --alias)
+
+export PATH=$PATH:~/.local/scripts
