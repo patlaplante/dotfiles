@@ -144,7 +144,7 @@ function upto ()
 }
 
 # I also have completion for this function, so that it gives me valid directory names and co
-mpletion when I hit tab:
+# mpletion when I hit tab:
 function _upto()
 {
     local d=${PWD//\//\ }
