@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# description: Return uptime in format for prompt.
+
+echo "[`uptime | perl -ne 'if(/\d\s+up(.*),\s+\d+\s+users/) { $s = $1; $s =~ s/^\s+|\s+$//g; print $s; }'`]"

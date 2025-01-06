@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# description: Create a timed link to an S3 bucket object.
+
+export AWS_PROFILE=default
+#alias aws-perso='export AWS_PROFILE=patperso'
+
+TTL=$1
+BUCKET=$2
+OBJECT=$3
+
+aws s3 presign s3://${BUCKET}/${OBJECT} --expires-in ${TTL}
+
