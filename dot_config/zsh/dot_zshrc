@@ -133,3 +133,28 @@ alias helpers="source bin/helpers.sh"
 
 export GOBIN=~/.go
 source "$HOME/.local/bin/env"
+
+function upto ()
+{
+    if [ -z "$1" ]; then
+        return
+    fi
+    local upto=$1
+    cd "${PWD/\/$upto\/*//$upto}"
+}
+
+# I also have completion for this function, so that it gives me valid directory names and co
+mpletion when I hit tab:
+function _upto()
+{
+    local d=${PWD//\//\ }
+    local x=$(echo $d | tr ' ' ',')
+    x=${x:1}
+    local opts=("${(@s/,/)x}")
+    compadd $opts
+    # compadd kotlin python
+
+}
+compdef _upto upto
+
+eval $(thefuck --alias)
