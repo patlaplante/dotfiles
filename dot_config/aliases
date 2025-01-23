@@ -25,11 +25,12 @@ alias -g .....='../../../..' # Go up four level
 alias cat='bat -A'  # Better cat
 alias catp='bat -p'  # Bat without fancy stuff
 alias file_size_kb='du -k "$filename" | cut -f1' # Size of file in kb
+alias less='less -R'
 
 # Terminal commands
 alias c="clear" # Clear the terminal
 alias e="exit" # Exit the terminal
-alias dumpcolor='for i in {0..255}; do print -Pn "%K{$i} %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done' # Print colors escape code.
+#alias dumpcolor='for i in {0..255}; do print -Pn "%K{$i} %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%8)):#7}:+$'\n'}; done' # Print colors escape code.
 
 # Networking
 alias listopenport='sudo lsof -i -P | grep -i "listen"' # List all open ports.
