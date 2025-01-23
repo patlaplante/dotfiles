@@ -25,7 +25,6 @@ alias -g .....='../../../..' # Go up four level
 alias cat='bat -A'  # Better cat
 alias catp='bat -p'  # Bat without fancy stuff
 alias file_size_kb='du -k "$filename" | cut -f1' # Size of file in kb
-alias less='less -R'
 
 # Terminal commands
 alias c="clear" # Clear the terminal
