@@ -16,6 +16,7 @@ elif (( $+commands[vim] )); then
 fi
 
 
-. "$HOME/.local/share/../bin/env"
 
-. "$HOME/.atuin/bin/env"
+#. "$HOME/.local/share/../bin/env"
+
+#. "$HOME/.atuin/bin/env"
