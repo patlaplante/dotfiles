@@ -18,9 +18,9 @@ LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+#eval "$(/opt/homebrew/bin/brew shellenv)"
 
-eval "$(~/.local/bin/mise activate zsh)"
+#eval "$(~/.local/bin/mise activate zsh)"
 
 
 znap source sorin-ionescu/prezto modules/{environment,history}
