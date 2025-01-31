@@ -20,7 +20,7 @@ LC_ALL=en_US.UTF-8
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-#eval "$(~/.local/bin/mise activate zsh)"
+eval "$(mise activate zsh)"
 
 
 znap source sorin-ionescu/prezto modules/{environment,history}
