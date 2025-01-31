@@ -4,7 +4,7 @@
 # Instead, to apply changes, open a new terminal or restart your shell.
 #
 
-export XDG_CONFIG_HOME=/Users/pat/.config
+export XDG_CONFIG_HOME=~/.config
 
 [[ -r ~/.local/zshenv/znap/znap.zsh ]] ||
     git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/.local/zshenv/znap
@@ -68,7 +68,7 @@ export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
 
-export _ZO_DATA_DIR="/Users/pat/.local/share/zoxide"
+export _ZO_DATA_DIR="~/.local/share/zoxide"
 eval "$(zoxide init --cmd cd zsh)"
 source <(fzf --zsh)
 
@@ -128,7 +128,7 @@ source $XDG_CONFIG_HOME/aliases
 alias zrcedit="vi $XDG_CONFIG_HOME/zsh/.zshrc"
 alias zrcreload="source $XDG_CONFIG_HOME/zsh/.zshrc"
 
-alias esp531="source /Users/pat/.tools/espidf/esp-idf-v531/export.sh"
+alias esp531="source ~/.tools/espidf/esp-idf-v531/export.sh"
 alias helpers="source bin/helpers.sh"
 
 export GOBIN=~/.go
